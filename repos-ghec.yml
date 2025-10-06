@@ -1,0 +1,6 @@
+repos:
+  - source: joshjohanning/joshjohanning.github.io
+    target: joshjohanning-org/joshjohanning.github.io-copy
+    visibility: private # Optional: private, public, or internal (defaults to private)
+    disable-github-actions: false # Optional: disable Actions on target repo (defaults to true)
+    archive-after-sync: false # Optional: archive repo after sync (defaults to false)
