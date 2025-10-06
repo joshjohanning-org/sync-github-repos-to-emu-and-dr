@@ -3,6 +3,7 @@ name: sync-github-repos
 on:
   schedule:
     - cron: '15 0 * * 1'
+  workflow_dispatch:
 
 jobs:
   sync-repos-to-emu:
