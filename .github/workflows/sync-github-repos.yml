@@ -30,7 +30,7 @@ jobs:
       - name: Bulk GitHub Repository Sync
         uses: joshjohanning/bulk-github-repo-sync-action@v1
         with:
-          repo-list-file: repos.yml
+          repo-list-file: repos-emu.yml
           source-github-token: ${{ steps.source-app-token.outputs.token }}
           target-github-token: ${{ steps.target-app-token.outputs.token }}
           overwrite-repo-visibility: true # overwrite repo visibility with what is in yml file; defaults to false
@@ -61,7 +61,7 @@ jobs:
       - name: Bulk GitHub Repository Sync
         uses: joshjohanning/bulk-github-repo-sync-action@v1
         with:
-          repo-list-file: repos.yml
+          repo-list-file: repos-ghe.yml
           source-github-token: ${{ steps.source-app-token.outputs.token }}
           target-github-token: ${{ steps.target-app-token.outputs.token }}
           overwrite-repo-visibility: true # overwrite repo visibility with what is in yml file; defaults to false
