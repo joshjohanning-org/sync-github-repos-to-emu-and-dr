@@ -70,7 +70,6 @@ jobs:
           target-github-token: ${{ steps.target-app-token.outputs.token }}
           overwrite-repo-visibility: true # overwrite repo visibility with what is in yml file; defaults to false
           force-push: true
-          target-github-url: https://customersuccess.ghe.com
           target-github-api-url: https://api.customersuccess.ghe.com
 
   sync-repos-to-ghec:
