@@ -11,13 +11,13 @@ jobs:
     
     steps:
       - uses: actions/checkout@v5
-      # # source
-      # - uses: actions/create-github-app-token@v2
-      #   id: source-app-token
-      #   with:
-      #     app-id: ${{ vars.SOURCE_APP_ID }}
-      #     private-key: ${{ secrets.SOURCE_APP_PRIVATE_KEY }}
-      #     owner: ${{ github.repository_owner }}
+      # source
+      - uses: actions/create-github-app-token@v2
+        id: source-app-token
+        with:
+          app-id: ${{ vars.SOURCE_APP_ID }}
+          private-key: ${{ secrets.SOURCE_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
       # target
       - uses: actions/create-github-app-token@v2
         id: target-app-token
@@ -29,7 +29,7 @@ jobs:
         uses: joshjohanning/bulk-github-repo-sync-action@v1
         with:
           repo-list-file: repos.yml
-          source-github-token: ${{ github.token }}
+          source-github-token: ${{ steps.source-app-token.outputs.token }}
           target-github-token: ${{ steps.target-app-token.outputs.token }}
           overwrite-repo-visibility: true # overwrite repo visibility with what is in yml file; defaults to false
           # force push to target repos (overwrites history); defaults to false
