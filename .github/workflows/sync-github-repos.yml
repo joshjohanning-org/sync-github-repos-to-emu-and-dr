@@ -81,7 +81,7 @@ jobs:
         with:
           app-id: ${{ vars.SOURCE_APP_ID }}
           private-key: ${{ secrets.SOURCE_APP_PRIVATE_KEY }}
-          owner: joshjohanning-emu
+          owner: joshjohanning-org
       - name: Bulk GitHub Repository Sync
         uses: joshjohanning/bulk-github-repo-sync-action@v1
         with:
